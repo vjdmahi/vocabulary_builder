@@ -88,3 +88,9 @@ composer install
 cp .env.example .env
 php artisan key:generate
 php artisan serve
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+[![GitHub stars](https://img.shields.io/github/stars/vjdmahi/vocabulary_builder?style=social)](https://github.com/vjdmahi/vocabulary_builder/stargazers)
