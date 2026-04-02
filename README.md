@@ -76,7 +76,6 @@ It provides a clean and user-friendly interface for learners to track and enhanc
 | JavaScript | Client-side interactivity |
 | HTML & CSS | Frontend structure and styling |
 | MySQL | Database |
-| Chart.js (optional) | Data visualization |
 
 ---
 
