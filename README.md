@@ -2,45 +2,87 @@
   <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300">
 </p>
 
-# 📚 Vocabulary Builder Web App
+# 📚 VocabBuilder
 
-## 🚀 About the Project
-This is a Laravel-based web application that helps users improve their vocabulary through visual learning.
-
-Users can enter a word, and the system fetches relevant images from an external API to help understand the meaning more effectively.
+A modern **Vocabulary Learning Web Application** built using **Laravel, JavaScript, and CSS**.  
+VocabBuilder helps users **learn, practice, and manage vocabulary** through interactive quizzes, flashcards, and personalized word lists.
 
 ---
 
-## ✨ Features
-- 🔍 Search for any word  
-- 🖼️ Display related images using API  
-- ⚡ Fast and user-friendly interface  
-- 📖 Visual-based vocabulary learning  
+## 🌟 Overview
+
+VocabBuilder is designed to improve vocabulary learning through:
+- Active recall (Quiz)
+- Repetition (Flashcards)
+- Organization (Word List)
+
+It provides a clean and user-friendly interface for learners to track and enhance their language skills.
 
 ---
 
-## 🛠️ Technologies Used
-- PHP (Laravel Framework)  
-- REST API  
-- HTML, CSS, JavaScript  
-- MySQL  
+## 🚀 Features
+
+### 📊 Dashboard
+- View total words learned
+- Track learning progress with charts
+- Quick access to features
+
+### ➕ Add New Word
+- Add vocabulary words with meaning and examples
+- Auto-fetch meaning and example support
+- Audio pronunciation feature
+
+### 📖 Word List
+- View all saved vocabulary
+- Search words and meanings
+- Edit and delete entries
+
+### 🧠 Quiz System
+- Multiple choice questions
+- Instant feedback
+- Interactive learning experience
+
+### 🃏 Flashcards
+- Flip card learning method
+- Navigate between words
+- Improve memory retention
 
 ---
 
-## ⚙️ How It Works
-1. User enters a word  
-2. Application sends request to image API  
-3. Images are fetched dynamically  
-4. Results are displayed to the user  
+## 🖼️ Screenshots
+
+### 🧠 Quiz Interface
+![Quiz](./quiz.png)
+
+### ➕ Add New Word
+![Add Word](./add.png)
+
+### 📊 Dashboard
+![Dashboard](./DB.png)
+
+### 🃏 Flashcards
+![Flashcards](./flashcard.png)
+
+### 📖 Word List
+![Word List](./list.png)
 
 ---
 
-## 📥 Installation
+## 🛠️ Tech Stack
 
+| Technology | Description |
+|----------|-------------|
+| Laravel | Backend framework (PHP) |
+| JavaScript | Client-side interactivity |
+| HTML & CSS | Frontend structure and styling |
+| MySQL | Database |
+| Chart.js (optional) | Data visualization |
+
+---
+
+## ⚙️ Installation Guide
+
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/vjdmahi/vocabulary_builder.git
-cd vocabulary_builder
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan serve
+git clone https://github.com/your-username/vocab-builder.git
+cd vocab-builder
