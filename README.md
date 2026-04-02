@@ -80,9 +80,12 @@ It provides a clean and user-friendly interface for learners to track and enhanc
 
 ---
 
-## ⚙️ Installation Guide
+## 📥 Installation
 
-### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/vocab-builder.git
-cd vocab-builder
+git clone https://github.com/vjdmahi/vocabulary_builder.git
+cd vocabulary_builder
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
