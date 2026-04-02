@@ -52,19 +52,19 @@ It provides a clean and user-friendly interface for learners to track and enhanc
 ## 🖼️ Screenshots
 
 ### 🧠 Quiz Interface
-![Quiz](./quiz.png)
+![Quiz](./screenshots/quiz.png)
 
 ### ➕ Add New Word
-![Add Word](./add.png)
+![Add Word](./screenshots/add.png)
 
 ### 📊 Dashboard
-![Dashboard](./DB.png)
+![Dashboard](./screenshots/DB.png)
 
 ### 🃏 Flashcards
-![Flashcards](./flashcard.png)
+![Flashcards](./screenshots/flashcard.png)
 
 ### 📖 Word List
-![Word List](./list.png)
+![Word List](./screenshots/list.png)
 
 ---
 
