@@ -89,6 +89,8 @@ cp .env.example .env
 php artisan key:generate
 php artisan serve
 
+---
+
 ## ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
