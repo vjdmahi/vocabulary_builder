@@ -42,7 +42,7 @@ class VocabularyController extends Controller
     public function quiz()
     {
         $correctWord = Vocabulary::inRandomOrder()->first();
-        
+
         // If no words at all, return view (view will handle empty state)
         if (!$correctWord) {
              return view('vocabularies.quiz', ['correctWord' => null, 'options' => []]);
@@ -91,7 +91,7 @@ class VocabularyController extends Controller
                  // For now, let's treat it as not found, but we could allow manual entry if we wanted.
                  // Given the user wants it fixed, maybe we should default to "Manual Entry" if API fails?
                  // But the prompt says "fix it" regarding "Unable to fetch".
-                 
+
                  \Illuminate\Support\Facades\Log::warning("API returned unexpected data for word: " . $request->word);
                  return back()->withErrors(['word' => 'Word definition not found in dictionary.']);
             }
@@ -151,7 +151,7 @@ class VocabularyController extends Controller
     private function fetchWordDefinition($word)
     {
         $client = new Client();
-        $url = "https://api.dictionaryapi.dev/api/v2/entries/en/{$word}";
+        iu
 
         try {
             $response = $client->request('GET', $url, ['verify' => false]);
