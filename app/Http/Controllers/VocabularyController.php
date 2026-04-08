@@ -151,7 +151,7 @@ class VocabularyController extends Controller
     private function fetchWordDefinition($word)
     {
         $client = new Client();
-        iu
+        $url = "https://api.dictionaryapi.dev/api/v2/entries/en/{$word}";
 
         try {
             $response = $client->request('GET', $url, ['verify' => false]);

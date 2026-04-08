@@ -1,45 +1,56 @@
-# 1️⃣ Start from PHP 8.2 FPM Alpine (lightweight)
-FROM php:8.2-fpm-alpine
+FROM php:8.4-fpm-alpine
 
-# 2️⃣ Install system packages & PHP extensions needed by Laravel
+# Install system + build dependencies
 RUN apk add --no-cache \
-        bash \
-        git \
-        curl \
-        unzip \
-        libzip-dev \
-        oniguruma-dev \
-        libxml2-dev \
-        npm \
-        nodejs \
-    && docker-php-ext-install \
-        pdo \
-        pdo_mysql \
-        mbstring \
-        tokenizer \
-        xml \
-        ctype \
-        fileinfo \
-        zip
+    bash \
+    git \
+    curl \
+    unzip \
+    libzip-dev \
+    oniguruma-dev \
+    libxml2-dev \
+    zlib-dev \
+    icu-dev \
+    nodejs \
+    npm \
+    $PHPIZE_DEPS
 
-# 3️⃣ Install Composer globally
+# Install PHP extensions (split to avoid errors)
+RUN docker-php-ext-install pdo pdo_mysql
+
+RUN docker-php-ext-install mbstring
+
+RUN docker-php-ext-install xml
+
+RUN docker-php-ext-install ctype
+
+RUN docker-php-ext-install fileinfo
+
+# Fix for zip (IMPORTANT)
+RUN docker-php-ext-configure zip
+RUN docker-php-ext-install zip
+
+# Remove build dependencies
+RUN apk del $PHPIZE_DEPS
+
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# 4️⃣ Set working directory
+# Set working directory
 WORKDIR /var/www
 
-# 5️⃣ Copy Laravel project into container
+# Copy project
 COPY . .
 
-# 6️⃣ Install PHP dependencies
+# Install Laravel dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# 7️⃣ Fix permissions for Laravel storage & cache
+# Fix permissions
 RUN chown -R www-data:www-data /var/www \
-    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+    && chmod -R 775 storage bootstrap/cache
 
-# 8️⃣ Expose container port 9000 for PHP-FPM
+# Expose PHP-FPM port
 EXPOSE 9000
 
-# 9️⃣ Default command (PHP-FPM)
-CMD ["php-fpm"]
+# Start PHP-FPM
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
